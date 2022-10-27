@@ -74,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun isValidText(str: String): Boolean {
         for (c in str) {
-            if (!(c in 'a'..'z' || c in 'A'..'Z' || c in '0'..'9' || c == '~' || c == '!' || c == '@')) {
+            if (!(c in 'a'..'z' || c in 'A'..'Z' || c in '0'..'9' || c == '~' || c == '!' || c == '@' || c == ' ')) {
                 return false
             }
         }
