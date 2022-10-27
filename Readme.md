@@ -1,7 +1,5 @@
 # ReadMe
 
----
-
 개발환경: Mac OS Ventura 13.0
         Android Studio Dolphin | 2021.3.1 Patch 1
 
@@ -12,9 +10,8 @@
           Device Name
            - Pixel 4 API 31 
 
----
+## 구현 내용
 
-구현 내용
 1. 첫번째 화면 (Sign In)
  - 앱 접속 페이지로써 처음 켜지는 화면에서 SharedPreference 객체에 접근하여 유저 목록을 가져옵니다.
  - 앱 접속 페이지로 들어온 화면에서 회원 ID/Password를 입력하는 View가 2개, 로그인/회원가입/Home 버튼이 3개로 총 5개의 View로 화면을 구성하고 있습니다.
