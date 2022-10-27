@@ -34,13 +34,27 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
+        if (!isValidId(id)) {
+            Toast.makeText(this, "ID는 영어 대소문자, 숫자만 입력할 수 있습니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (Data.findUser(id) != null) {
-            Toast.makeText(this, "중복된 아이디가 있습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "중복된 ID가 있습니다.", Toast.LENGTH_SHORT).show()
             return
         }
 
         if (password.length > 20) {
             Toast.makeText(this, "비밀번호는 20글자 이하만 가능합니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (!isValidPassword(password)) {
+            Toast.makeText(
+                this,
+                "비밀번호는 영어 대소문자, 숫자, 특수기호(~, !, @)만 입력할 수 있습니다.",
+                Toast.LENGTH_SHORT
+            ).show()
             return
         }
 
@@ -54,9 +68,9 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
-        if (!isValidText(id) || !isValidText(password) || !isValidText(name) || !isValidText(address)) {
+        if (!isValidText(name) || !isValidText(address)) {
             Toast.makeText(
-                this, "ID, Name, Password, Address의 값으로는 영어 대소문자, 숫자, ~, !, @만 가능합니다.", Toast.LENGTH_SHORT
+                this, "이름, 주소의 값으로는 영어 대소문자, 숫자, 한글, 특수기호(~, !)만 입력할 수 있습니다.", Toast.LENGTH_SHORT
             ).show()
             return
         }
@@ -72,17 +86,23 @@ class SignUpActivity : AppCompatActivity() {
         finish()
     }
 
+    private fun isValidId(id: String): Boolean {
+        val regex = Regex("^[a-zA-Z0-9]+\$")
+        return regex.matches(id)
+    }
+
+    private fun isValidPassword(password: String): Boolean {
+        val regex = Regex("^[a-zA-Z0-9~!@]+\$")
+        return regex.matches(password)
+    }
+
     private fun isValidText(str: String): Boolean {
-        for (c in str) {
-            if (!(c in 'a'..'z' || c in 'A'..'Z' || c in '0'..'9' || c == '~' || c == '!' || c == '@' || c == ' ')) {
-                return false
-            }
-        }
-        return true
+        val regex = Regex("^[~!a-zA-Z0-9ㄱ-ㅎ가-힣]+$")
+        return regex.matches(str)
     }
 
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
-        val regex = Regex("\\d{3}-\\d{3,4}-\\d{4}")
+        val regex = Regex("\\d{3}-\\d{4}-\\d{4}")
         return regex.matches(phoneNumber)
     }
 }
