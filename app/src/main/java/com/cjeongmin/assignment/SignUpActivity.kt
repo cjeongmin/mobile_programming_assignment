@@ -54,9 +54,9 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
-        if (!isValidText(id) || !isValidText(name) || !isValidText(address)) {
+        if (!isValidText(id) || !isValidText(password) || !isValidText(name) || !isValidText(address)) {
             Toast.makeText(
-                this, "ID, Name, Address의 값으로는 영어 대소문자, 숫자, ~, !, @만 가능합니다.", Toast.LENGTH_SHORT
+                this, "ID, Name, Password, Address의 값으로는 영어 대소문자, 숫자, ~, !, @만 가능합니다.", Toast.LENGTH_SHORT
             ).show()
             return
         }
