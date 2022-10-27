@@ -70,7 +70,7 @@ class SignUpActivity : AppCompatActivity() {
 
         if (!isValidText(name) || !isValidText(address)) {
             Toast.makeText(
-                this, "이름, 주소의 값으로는 영어 대소문자, 숫자, 한글, 특수기호(~, !)만 입력할 수 있습니다.", Toast.LENGTH_SHORT
+                this, "이름, 주소는 영어 대소문자, 숫자, 한글, 특수기호(~, !)만 입력할 수 있습니다.", Toast.LENGTH_SHORT
             ).show()
             return
         }
@@ -97,7 +97,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun isValidText(str: String): Boolean {
-        val regex = Regex("^[~!a-zA-Z0-9ㄱ-ㅎ가-힣]+$")
+        val regex = Regex("^[ ~!a-zA-Z0-9ㄱ-ㅎ가-힣]+$")
         return regex.matches(str)
     }
 
