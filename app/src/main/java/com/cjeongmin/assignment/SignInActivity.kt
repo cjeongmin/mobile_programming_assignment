@@ -13,12 +13,6 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Data.fetchUserList(this)
 
-        if (Data.user != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
@@ -40,6 +34,15 @@ class SignInActivity : AppCompatActivity() {
         binding?.btnHome?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (Data.user != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

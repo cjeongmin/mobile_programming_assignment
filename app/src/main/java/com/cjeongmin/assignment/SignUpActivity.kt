@@ -81,7 +81,9 @@ class SignUpActivity : AppCompatActivity() {
             Toast.makeText(this, "개인정보 수집/이용에 동의하셨습니다.", Toast.LENGTH_SHORT).show()
         }
 
-        Data.addUser(User(id, password, name, phoneNumber, address))
+        val user = User(id, password, name, phoneNumber, address)
+        Data.user = user
+        Data.addUser(user)
         Data.storeUserList(this)
         finish()
     }
