@@ -1,14 +1,16 @@
 # ReadMe
 
-개발환경: Mac OS Ventura 13.0
-        Android Studio Dolphin | 2021.3.1 Patch 1
+개발환경: 
+>       Mac OS Ventura 13.0
+>       Android Studio Dolphin | 2021.3.1 Patch 1
 
-컴파일 환경: Compile SDK Version
-           - 32 (API 32: Android 12L (Sv2))
-          Virtual Device API level
-           - 31
-          Device Name
-           - Pixel 4 API 31 
+컴파일 환경: 
+>       Compile SDK Version
+>        - 32 (API 32: Android 12L (Sv2))
+>       Virtual Device API level
+>        - 31
+>       Device Name
+>        - Pixel 4 API 31 
 
 ## 구현 내용
 
