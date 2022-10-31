@@ -7,12 +7,21 @@
     android:padding="50dp"
     tools:context=".SignInActivity">
 
+    <TextView
+        android:id="@+id/tv_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="Sign In"
+        android:textSize="35sp" />
+
     <EditText
         android:id="@+id/et_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_sign_in"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
         android:hint="ID"
         android:inputType="text" />
 
@@ -49,13 +58,14 @@
                 android:layout_marginLeft="2dp"
                 android:layout_weight="1"
                 android:text="Sign Up" />
+
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_home"
+            android:id="@+id/btn_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Home" />
+            android:text="Main" />
 
     </LinearLayout>
 

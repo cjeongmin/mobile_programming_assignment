@@ -9,6 +9,13 @@
     android:padding="30dp"
     tools:context=".SignUpActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textSize="35sp" />
+
     <EditText
         android:id="@+id/et_id"
         android:layout_width="match_parent"
