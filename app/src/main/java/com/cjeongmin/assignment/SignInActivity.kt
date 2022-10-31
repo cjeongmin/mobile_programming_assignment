@@ -37,15 +37,6 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (Data.user != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
-
     private fun signUp() {
         val intent = Intent(this, SignUpActivity::class.java)
         startActivity(intent)

@@ -34,6 +34,11 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
+        if (id.length < 15) {
+            Toast.makeText(this, "ID는 15글자 이하이여야 합니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (!isValidId(id)) {
             Toast.makeText(this, "ID는 영어 대소문자, 숫자만 입력할 수 있습니다.", Toast.LENGTH_SHORT).show()
             return
@@ -46,6 +51,11 @@ class SignUpActivity : AppCompatActivity() {
 
         if (password.length > 20) {
             Toast.makeText(this, "비밀번호는 20글자 이하만 가능합니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (password.length < 8) {
+            Toast.makeText(this, "비밀번호는 8글자 이상이여야 합니다.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -82,7 +92,6 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         val user = User(id, password, name, phoneNumber, address)
-        Data.user = user
         Data.addUser(user)
         Data.storeUserList(this)
         finish()
