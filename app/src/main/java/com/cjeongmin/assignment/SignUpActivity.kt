@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
-        if (id.length < 15) {
+        if (id.length > 15) {
             Toast.makeText(this, "ID는 15글자 이하이여야 합니다.", Toast.LENGTH_SHORT).show()
             return
         }
